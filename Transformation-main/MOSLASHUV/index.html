@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./public/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <title>Calculadora de Taxa Metabólica Basal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="public/styles/style.css" />
+  <link rel="icon" href="./public/images/favicon.png" />
+  <script src="./public/scripts/scripts.js"></script>
+</head>
+
+<body lang="pt-br">X  
+
+  <div class="lan-bar-top">
+    <a href="./index.html" class="lan-item" target="_blank" title="PT">PT</a>
+    <a href="./public/pages/index_ES.html" class="lan-item" target="_blank" title="ES">ES</a>
+    <a href="./public/pages/index_it.html" class="lan-item" target="_blank" title="IT">IT</a>
+    <a href="./public/pages/index_en.html" class="lan-item" target="_blank" title="EN">EN</a>
+  </div>
+
+  <header>
+    <img src="./public/images/calcCal.png" alt="calorias" class="logo" />
+    <h1 class="title beauty-shadow">Bazal metabolizm tezligi kalkulyatori</h1>
+  </header>
+
+  <main class="container">
+    <form class="form" id="formulario" onsubmit="return calcular(event)">
+      <fieldset>
+        <div class="field-group">
+          <label for="genero">Jinsi:</label>
+          <select name="genero" id="genero">
+            <option value="Feminino">Ayol</option>
+            <option value="Masculino">Erkak</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="peso">Vazni <small>(kg)</small>:</label>
+          <input type="number" name="peso" id="peso" step="0.01" min="0" size="4" autofocus required placeholder="70" />
+        </div>
+
+        <div class="field-group">
+          <label for="altura">Bo'yi <small>(cm)</small>:</label>
+          <input type="number" name="altura" id="altura" step="0.01" min="0" size="5" required placeholder="170" />
+        </div>
+
+        <div class="field-group">
+          <label for="idade">Yoshi <small>()</small>:</label>
+          <input type="number" name="idade" id="idade" step="1.00" min="0" size="4" required placeholder="25" />
+        </div>
+
+        <div class="field-btn">
+          <input type="submit" class="button" value="Hisobla" />
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="resultado-container" id="resultado">
+      <h2 class="result">
+        SIZNING NATIJA:
+      </h2>
+      <div class="result-list" id="result-data" style="visibility: hidden">
+        <ul>
+          <li>Bazal Metobolizm : <span id="metabolismo_basal"></span> cal</li>
+          <li>O'tirgan masofadan boshqarish pulti : <span id="sedentario"></span> cal</li>
+          <li>Yengil jismoniy mashqlar : <span id="exercicio_leve"></span> cal</li>
+          <li>O'rtacha jismoniy mashqlar : <span id="exercicio_moderado"></span> cal</li>
+          <li>Muntazam jismoniy mashqlar : <span id="ativo"></span> cal</li>
+          <li>Kuniga 2 soatlik mashqlar : <span id="super_ativo"></span> cal</li>
+        </ul>
+
+        <h3 class="x-padd">Semirish :</h3>
+
+        <p>
+          Kilogram olishingiz uchun siz este'mol qilishingiz kerak :
+          <span id="ganhar_peso"></span> cal<small> (kunlik)</small>
+        </p>
+
+        <h3 class="x-padd">Vazn Yo'qotish :</h3>
+
+        <p>
+          Kilogram yo'qotish uchun siz iste'mol qilishiz kerak :
+          <span id="perder_peso"></span> cal
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
